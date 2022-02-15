@@ -1,0 +1,326 @@
+Analysis & Synthesis report for lpcdbg_qspi_p83-80_intel-sr6a4
+Tue Oct 26 04:04:27 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top_level|lpc_decode:comb_3|state_lpc
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (No Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: lpc_decode:comb_3
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Oct 26 04:04:27 2021       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; lpcdbg_qspi_p83-80_intel-sr6a4              ;
+; Top-level Entity Name       ; top_level                                   ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 70                                          ;
+; Total pins                  ; 14                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                          ;
++------------------------------------------------------------------+--------------------+--------------------------------+
+; Option                                                           ; Setting            ; Default Value                  ;
++------------------------------------------------------------------+--------------------+--------------------------------+
+; Device                                                           ; EPM1270F256C5      ;                                ;
+; Top-level entity name                                            ; top_level          ; lpcdbg_qspi_p83-80_intel-sr6a4 ;
+; Family name                                                      ; MAX II             ; Cyclone V                      ;
+; Restructure Multiplexers                                         ; Off                ; Auto                           ;
+; Use smart compilation                                            ; Off                ; Off                            ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                             ;
+; Enable compact report table                                      ; Off                ; Off                            ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                            ;
+; Preserve fewer node names                                        ; On                 ; On                             ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable                         ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001                   ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993                      ;
+; State Machine Processing                                         ; Auto               ; Auto                           ;
+; Safe State Machine                                               ; Off                ; Off                            ;
+; Extract Verilog State Machines                                   ; On                 ; On                             ;
+; Extract VHDL State Machines                                      ; On                 ; On                             ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                            ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000                           ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                            ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                             ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                             ;
+; Parallel Synthesis                                               ; On                 ; On                             ;
+; NOT Gate Push-Back                                               ; On                 ; On                             ;
+; Power-Up Don't Care                                              ; On                 ; On                             ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                            ;
+; Remove Duplicate Registers                                       ; On                 ; On                             ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                            ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                            ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                            ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                            ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                            ;
+; Ignore SOFT Buffers                                              ; On                 ; On                             ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                            ;
+; Optimization Technique                                           ; Balanced           ; Balanced                       ;
+; Carry Chain Length                                               ; 70                 ; 70                             ;
+; Auto Carry Chains                                                ; On                 ; On                             ;
+; Auto Open-Drain Pins                                             ; On                 ; On                             ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                            ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto                           ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto                           ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                             ;
+; Allow Synchronous Control Signals                                ; On                 ; On                             ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                            ;
+; Auto Resource Sharing                                            ; Off                ; Off                            ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                             ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                            ;
+; Report Parameter Settings                                        ; On                 ; On                             ;
+; Report Source Assignments                                        ; On                 ; On                             ;
+; Report Connectivity Checks                                       ; On                 ; On                             ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                            ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                              ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation             ;
+; HDL message level                                                ; Level2             ; Level2                         ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                            ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000                           ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000                           ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                            ;
+; Clock MUX Protection                                             ; On                 ; On                             ;
+; Block Design Naming                                              ; Auto               ; Auto                           ;
+; Synthesis Effort                                                 ; Auto               ; Auto                           ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                             ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium                         ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto                           ;
++------------------------------------------------------------------+--------------------+--------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+; top_level.v                      ; yes             ; User Verilog HDL File  ; D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/top_level.v  ;         ;
+; lpc_decode.v                     ; yes             ; User Verilog HDL File  ; D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/lpc_decode.v ;         ;
+; qspi_slave.v                     ; yes             ; User Verilog HDL File  ; D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/qspi_slave.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Total logic elements                        ; 70        ;
+;     -- Combinational with no register       ; 18        ;
+;     -- Register only                        ; 37        ;
+;     -- Combinational with a register        ; 15        ;
+;                                             ;           ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 13        ;
+;     -- 3 input functions                    ; 8         ;
+;     -- 2 input functions                    ; 12        ;
+;     -- 1 input functions                    ; 0         ;
+;     -- 0 input functions                    ; 0         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 70        ;
+;     -- arithmetic mode                      ; 0         ;
+;     -- qfbk mode                            ; 0         ;
+;     -- register cascade mode                ; 0         ;
+;     -- synchronous clear/load mode          ; 0         ;
+;     -- asynchronous clear/load mode         ; 43        ;
+;                                             ;           ;
+; Total registers                             ; 52        ;
+; I/O pins                                    ; 14        ;
+; Maximum fan-out node                        ; lpc_clk_l ;
+; Maximum fan-out                             ; 48        ;
+; Total fan-out                               ; 281       ;
+; Average fan-out                             ; 3.35      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name          ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+-------------+--------------+
+; |top_level                 ; 70 (0)      ; 52           ; 0          ; 14   ; 0            ; 18 (0)       ; 37 (0)            ; 15 (0)           ; 0 (0)           ; 0 (0)      ; |top_level                   ; top_level   ; work         ;
+;    |lpc_decode:comb_3|     ; 66 (66)     ; 48           ; 0          ; 0    ; 0            ; 18 (18)      ; 33 (33)           ; 15 (15)          ; 0 (0)           ; 0 (0)      ; |top_level|lpc_decode:comb_3 ; lpc_decode  ; work         ;
+;    |qspi_slave:comb_4|     ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |top_level|qspi_slave:comb_4 ; qspi_slave  ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_level|lpc_decode:comb_3|state_lpc                                                                                                                                                                                                                                                                ;
++------------------------+-----------------+---------------------+---------------------+---------------------+---------------------+---------------------+------------------------+------------------------+-----------------+-----------------+-----------------+-----------------+-------------------+----------------+
+; Name                   ; state_lpc.abort ; state_lpc.post_tar1 ; state_lpc.post_tar0 ; state_lpc.iow_data1 ; state_lpc.iow_data0 ; state_lpc.iow_sync0 ; state_lpc.iow_pre_tar1 ; state_lpc.iow_pre_tar0 ; state_lpc.addr4 ; state_lpc.addr5 ; state_lpc.addr6 ; state_lpc.addr7 ; state_lpc.command ; state_lpc.idle ;
++------------------------+-----------------+---------------------+---------------------+---------------------+---------------------+---------------------+------------------------+------------------------+-----------------+-----------------+-----------------+-----------------+-------------------+----------------+
+; state_lpc.idle         ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 0              ;
+; state_lpc.command      ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 1                 ; 1              ;
+; state_lpc.addr7        ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 1               ; 0                 ; 1              ;
+; state_lpc.addr6        ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 1               ; 0               ; 0                 ; 1              ;
+; state_lpc.addr5        ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 1               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.addr4        ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 1               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.iow_pre_tar0 ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 1                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.iow_pre_tar1 ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.iow_sync0    ; 0               ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.iow_data0    ; 0               ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.iow_data1    ; 0               ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.post_tar0    ; 0               ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.post_tar1    ; 0               ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
+; state_lpc.abort        ; 1               ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                      ; 0                      ; 0               ; 0               ; 0               ; 0               ; 0                 ; 1              ;
++------------------------+-----------------+---------------------+---------------------+---------------------+---------------------+---------------------+------------------------+------------------------+-----------------+-----------------+-----------------+-----------------+-------------------+----------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++---------------------------------------+------------------------------------------+
+; Register name                         ; Reason for Removal                       ;
++---------------------------------------+------------------------------------------+
+; lpc_decode:comb_3|lad_out[1..3]       ; Merged with lpc_decode:comb_3|lad_out[0] ;
+; lpc_decode:comb_3|state_lpc~4         ; Lost fanout                              ;
+; lpc_decode:comb_3|state_lpc~5         ; Lost fanout                              ;
+; lpc_decode:comb_3|state_lpc~6         ; Lost fanout                              ;
+; lpc_decode:comb_3|state_lpc~7         ; Lost fanout                              ;
+; Total Number of Removed Registers = 7 ;                                          ;
++---------------------------------------+------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 52    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 39    ;
+; Number of registers using Asynchronous Load  ; 4     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (No Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |top_level|lpc_decode:comb_3|start_reg[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpc_decode:comb_3 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; idle           ; 0000  ; Unsigned Binary                       ;
+; command        ; 0001  ; Unsigned Binary                       ;
+; addr7          ; 0010  ; Unsigned Binary                       ;
+; addr6          ; 0011  ; Unsigned Binary                       ;
+; addr5          ; 0100  ; Unsigned Binary                       ;
+; addr4          ; 0101  ; Unsigned Binary                       ;
+; iow_pre_tar0   ; 0110  ; Unsigned Binary                       ;
+; iow_pre_tar1   ; 0111  ; Unsigned Binary                       ;
+; iow_sync0      ; 1000  ; Unsigned Binary                       ;
+; iow_data0      ; 1001  ; Unsigned Binary                       ;
+; iow_data1      ; 1010  ; Unsigned Binary                       ;
+; post_tar0      ; 1011  ; Unsigned Binary                       ;
+; post_tar1      ; 1100  ; Unsigned Binary                       ;
+; abort          ; 1101  ; Unsigned Binary                       ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Oct 26 04:04:19 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lpcdbg_qspi_p83-80_intel-sr6a4 -c lpcdbg_qspi_p83-80_intel-sr6a4
+Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file top_level.v
+    Info (12023): Found entity 1: top_level File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/top_level.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file lpc_decode.v
+    Info (12023): Found entity 1: lpc_decode File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/lpc_decode.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file qspi_slave.v
+    Info (12023): Found entity 1: qspi_slave File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/qspi_slave.v Line: 4
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.v(66): instance has no name File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/top_level.v Line: 66
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.v(77): instance has no name File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/top_level.v Line: 77
+Info (12127): Elaborating entity "top_level" for the top level hierarchy
+Info (12128): Elaborating entity "lpc_decode" for hierarchy "lpc_decode:comb_3" File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/top_level.v Line: 66
+Warning (10036): Verilog HDL or VHDL warning at lpc_decode.v(53): object "iow_hit" assigned a value but never read File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/lpc_decode.v Line: 53
+Warning (10240): Verilog HDL Always Construct warning at lpc_decode.v(79): inferring latch(es) for variable "address_reg", which holds its previous value in one or more paths through the always construct File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/lpc_decode.v Line: 79
+Info (12128): Elaborating entity "qspi_slave" for hierarchy "qspi_slave:comb_4" File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/top_level.v Line: 77
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "lpc_v3p3_s0" File: D:/6 - Projects/Software/! FPGA - CPLD/lpcdbg_qspi_p83-80_intel-sr6a4_evt/top_level.v Line: 29
+Info (21057): Implemented 84 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21060): Implemented 4 bidirectional pins
+    Info (21061): Implemented 70 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 590 megabytes
+    Info: Processing ended: Tue Oct 26 04:04:27 2021
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:24
+
+

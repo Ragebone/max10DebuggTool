@@ -1,0 +1,17 @@
+
+State Machine - |top_level|lpc_decode:comb_3|state_lpc
+Name state_lpc.abort state_lpc.post_tar1 state_lpc.post_tar0 state_lpc.iow_data1 state_lpc.iow_data0 state_lpc.iow_sync0 state_lpc.iow_pre_tar1 state_lpc.iow_pre_tar0 state_lpc.addr4 state_lpc.addr5 state_lpc.addr6 state_lpc.addr7 state_lpc.command state_lpc.idle 
+state_lpc.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state_lpc.command 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state_lpc.addr7 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state_lpc.addr6 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state_lpc.addr5 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state_lpc.addr4 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state_lpc.iow_pre_tar0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state_lpc.iow_pre_tar1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state_lpc.iow_sync0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state_lpc.iow_data0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state_lpc.iow_data1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state_lpc.post_tar0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state_lpc.post_tar1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state_lpc.abort 1 0 0 0 0 0 0 0 0 0 0 0 0 1 

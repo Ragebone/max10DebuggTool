@@ -1,0 +1,9 @@
+Analysis & Synthesis Status : Successful - Tue Oct 26 04:04:27 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : lpcdbg_qspi_p83-80_intel-sr6a4
+Top-level Entity Name : top_level
+Family : MAX II
+Total logic elements : 70
+Total pins : 14
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

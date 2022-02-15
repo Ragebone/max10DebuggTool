@@ -1,0 +1,622 @@
+Timing Analyzer report for lpcdbg_qspi_p83-80_intel-sr6a4
+Tue Oct 26 04:04:34 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'lpc_clk_l'
+ 12. Setup: 'lpc_decode:comb_3|lpc_hit'
+ 13. Hold: 'lpc_clk_l'
+ 14. Hold: 'lpc_decode:comb_3|lpc_hit'
+ 15. Recovery: 'lpc_decode:comb_3|lpc_hit'
+ 16. Removal: 'lpc_decode:comb_3|lpc_hit'
+ 17. Setup Transfers
+ 18. Hold Transfers
+ 19. Recovery Transfers
+ 20. Removal Transfers
+ 21. Report TCCS
+ 22. Report RSKM
+ 23. Unconstrained Paths Summary
+ 24. Clock Status Summary
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; lpcdbg_qspi_p83-80_intel-sr6a4                      ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM1270F256C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                               ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; Clock Name                ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                       ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; lpc_clk_l                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { lpc_clk_l }                 ;
+; lpc_decode:comb_3|lpc_hit ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { lpc_decode:comb_3|lpc_hit } ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 138.91 MHz ; 138.91 MHz      ; lpc_clk_l  ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------+
+; Setup Summary                                      ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; lpc_clk_l                 ; -6.199 ; -161.639      ;
+; lpc_decode:comb_3|lpc_hit ; -1.373 ; -5.423        ;
++---------------------------+--------+---------------+
+
+
++----------------------------------------------------+
+; Hold Summary                                       ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; lpc_clk_l                 ; -1.853 ; -1.853        ;
+; lpc_decode:comb_3|lpc_hit ; 1.789  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++----------------------------------------------------+
+; Recovery Summary                                   ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; lpc_decode:comb_3|lpc_hit ; -1.794 ; -7.158        ;
++---------------------------+--------+---------------+
+
+
++---------------------------------------------------+
+; Removal Summary                                   ;
++---------------------------+-------+---------------+
+; Clock                     ; Slack ; End Point TNS ;
++---------------------------+-------+---------------+
+; lpc_decode:comb_3|lpc_hit ; 2.230 ; 0.000         ;
++---------------------------+-------+---------------+
+
+
++----------------------------------------------------+
+; Minimum Pulse Width Summary                        ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; lpc_clk_l                 ; -2.289 ; -2.289        ;
+; lpc_decode:comb_3|lpc_hit ; 0.234  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'lpc_clk_l'                                                                                                                                           ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.199 ; lpc_decode:comb_3|address_reg[21]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.866      ;
+; -6.199 ; lpc_decode:comb_3|address_reg[21]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.866      ;
+; -6.199 ; lpc_decode:comb_3|address_reg[21]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.866      ;
+; -6.199 ; lpc_decode:comb_3|address_reg[21]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.866      ;
+; -6.051 ; lpc_decode:comb_3|address_reg[22]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.718      ;
+; -6.051 ; lpc_decode:comb_3|address_reg[22]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.718      ;
+; -6.051 ; lpc_decode:comb_3|address_reg[22]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.718      ;
+; -6.051 ; lpc_decode:comb_3|address_reg[22]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.718      ;
+; -6.017 ; lpc_decode:comb_3|address_reg[21]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.684      ;
+; -5.874 ; lpc_decode:comb_3|address_reg[28]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.541      ;
+; -5.874 ; lpc_decode:comb_3|address_reg[28]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.541      ;
+; -5.874 ; lpc_decode:comb_3|address_reg[28]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.541      ;
+; -5.874 ; lpc_decode:comb_3|address_reg[28]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.541      ;
+; -5.869 ; lpc_decode:comb_3|address_reg[22]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.536      ;
+; -5.825 ; lpc_decode:comb_3|address_reg[25]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.492      ;
+; -5.825 ; lpc_decode:comb_3|address_reg[25]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.492      ;
+; -5.825 ; lpc_decode:comb_3|address_reg[25]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.492      ;
+; -5.825 ; lpc_decode:comb_3|address_reg[25]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.492      ;
+; -5.725 ; lpc_decode:comb_3|address_reg[29]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.392      ;
+; -5.725 ; lpc_decode:comb_3|address_reg[29]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.392      ;
+; -5.725 ; lpc_decode:comb_3|address_reg[29]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.392      ;
+; -5.725 ; lpc_decode:comb_3|address_reg[29]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.392      ;
+; -5.692 ; lpc_decode:comb_3|address_reg[28]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.359      ;
+; -5.665 ; lpc_decode:comb_3|address_reg[26]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.332      ;
+; -5.665 ; lpc_decode:comb_3|address_reg[26]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.332      ;
+; -5.665 ; lpc_decode:comb_3|address_reg[26]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.332      ;
+; -5.665 ; lpc_decode:comb_3|address_reg[26]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.332      ;
+; -5.643 ; lpc_decode:comb_3|address_reg[25]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.310      ;
+; -5.633 ; lpc_decode:comb_3|start_reg[1]        ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.300      ;
+; -5.543 ; lpc_decode:comb_3|address_reg[29]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.210      ;
+; -5.497 ; lpc_decode:comb_3|address_reg[20]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.164      ;
+; -5.497 ; lpc_decode:comb_3|address_reg[20]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.164      ;
+; -5.497 ; lpc_decode:comb_3|address_reg[20]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.164      ;
+; -5.497 ; lpc_decode:comb_3|address_reg[20]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.164      ;
+; -5.483 ; lpc_decode:comb_3|address_reg[26]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.150      ;
+; -5.472 ; lpc_decode:comb_3|start_reg[0]        ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.139      ;
+; -5.449 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.116      ;
+; -5.449 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.116      ;
+; -5.449 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.116      ;
+; -5.449 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 6.116      ;
+; -5.315 ; lpc_decode:comb_3|address_reg[20]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.982      ;
+; -5.285 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.952      ;
+; -5.285 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.952      ;
+; -5.285 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.952      ;
+; -5.285 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.952      ;
+; -5.250 ; lpc_decode:comb_3|cmd_reg[2]          ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.917      ;
+; -5.169 ; lpc_decode:comb_3|address_reg[30]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.836      ;
+; -5.169 ; lpc_decode:comb_3|address_reg[30]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.836      ;
+; -5.169 ; lpc_decode:comb_3|address_reg[30]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.836      ;
+; -5.169 ; lpc_decode:comb_3|address_reg[30]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.836      ;
+; -5.127 ; lpc_decode:comb_3|address_reg[24]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.794      ;
+; -5.127 ; lpc_decode:comb_3|address_reg[24]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.794      ;
+; -5.127 ; lpc_decode:comb_3|address_reg[24]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.794      ;
+; -5.127 ; lpc_decode:comb_3|address_reg[24]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.794      ;
+; -5.125 ; lpc_decode:comb_3|address_reg[19]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.792      ;
+; -5.125 ; lpc_decode:comb_3|address_reg[19]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.792      ;
+; -5.125 ; lpc_decode:comb_3|address_reg[19]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.792      ;
+; -5.125 ; lpc_decode:comb_3|address_reg[19]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.792      ;
+; -5.094 ; lpc_decode:comb_3|address_reg[18]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.761      ;
+; -5.094 ; lpc_decode:comb_3|address_reg[18]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.761      ;
+; -5.094 ; lpc_decode:comb_3|address_reg[18]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.761      ;
+; -5.094 ; lpc_decode:comb_3|address_reg[18]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.761      ;
+; -4.994 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|lpc_hit             ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.661      ;
+; -4.994 ; lpc_decode:comb_3|address_reg[23]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.661      ;
+; -4.994 ; lpc_decode:comb_3|address_reg[23]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.661      ;
+; -4.994 ; lpc_decode:comb_3|address_reg[23]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.661      ;
+; -4.994 ; lpc_decode:comb_3|address_reg[23]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.661      ;
+; -4.987 ; lpc_decode:comb_3|address_reg[30]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.654      ;
+; -4.945 ; lpc_decode:comb_3|address_reg[24]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.612      ;
+; -4.945 ; lpc_decode:comb_3|start_reg[2]        ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.612      ;
+; -4.920 ; lpc_decode:comb_3|address_reg[28]     ; lpc_decode:comb_3|state_lpc.iow_data1 ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.587      ;
+; -4.904 ; lpc_decode:comb_3|state_lpc.addr4     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.571      ;
+; -4.898 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|port_80[4]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.565      ;
+; -4.898 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|port_80[5]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.565      ;
+; -4.898 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|port_80[6]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.565      ;
+; -4.898 ; lpc_decode:comb_3|address_reg[16]     ; lpc_decode:comb_3|port_80[7]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.565      ;
+; -4.830 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|lpc_hit             ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.497      ;
+; -4.812 ; lpc_decode:comb_3|address_reg[23]     ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.479      ;
+; -4.807 ; lpc_decode:comb_3|state_lpc.iow_data0 ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.474      ;
+; -4.807 ; lpc_decode:comb_3|state_lpc.iow_data0 ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.474      ;
+; -4.807 ; lpc_decode:comb_3|state_lpc.iow_data0 ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.474      ;
+; -4.807 ; lpc_decode:comb_3|state_lpc.iow_data0 ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.474      ;
+; -4.771 ; lpc_decode:comb_3|address_reg[29]     ; lpc_decode:comb_3|state_lpc.iow_data1 ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.438      ;
+; -4.734 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|port_80[4]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.401      ;
+; -4.734 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|port_80[5]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.401      ;
+; -4.734 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|port_80[6]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.401      ;
+; -4.734 ; lpc_decode:comb_3|address_reg[17]     ; lpc_decode:comb_3|port_80[7]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.401      ;
+; -4.709 ; lpc_decode:comb_3|cmd_reg[1]          ; lpc_decode:comb_3|state_lpc.idle      ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.376      ;
+; -4.670 ; lpc_decode:comb_3|address_reg[19]     ; lpc_decode:comb_3|lpc_hit             ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.337      ;
+; -4.669 ; lpc_decode:comb_3|address_reg[31]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.336      ;
+; -4.669 ; lpc_decode:comb_3|address_reg[31]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.336      ;
+; -4.669 ; lpc_decode:comb_3|address_reg[31]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.336      ;
+; -4.669 ; lpc_decode:comb_3|address_reg[31]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.336      ;
+; -4.639 ; lpc_decode:comb_3|address_reg[18]     ; lpc_decode:comb_3|lpc_hit             ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.306      ;
+; -4.612 ; lpc_decode:comb_3|address_reg[27]     ; lpc_decode:comb_3|port_80[0]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.279      ;
+; -4.612 ; lpc_decode:comb_3|address_reg[27]     ; lpc_decode:comb_3|port_80[1]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.279      ;
+; -4.612 ; lpc_decode:comb_3|address_reg[27]     ; lpc_decode:comb_3|port_80[2]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.279      ;
+; -4.612 ; lpc_decode:comb_3|address_reg[27]     ; lpc_decode:comb_3|port_80[3]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.279      ;
+; -4.574 ; lpc_decode:comb_3|address_reg[19]     ; lpc_decode:comb_3|port_80[4]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.241      ;
+; -4.574 ; lpc_decode:comb_3|address_reg[19]     ; lpc_decode:comb_3|port_80[5]          ; lpc_clk_l    ; lpc_clk_l   ; 1.000        ; 0.000      ; 5.241      ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'lpc_decode:comb_3|lpc_hit'                                                                                                                        ;
++--------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                       ; Launch Clock ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+; -1.373 ; lpc_decode:comb_3|port_80[6] ; qspi_slave:comb_4|qspi_out[2] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 1.000        ; 0.257      ; 2.297      ;
+; -1.362 ; lpc_decode:comb_3|port_80[5] ; qspi_slave:comb_4|qspi_out[1] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 1.000        ; 0.257      ; 2.286      ;
+; -1.345 ; lpc_decode:comb_3|port_80[4] ; qspi_slave:comb_4|qspi_out[0] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 1.000        ; 0.257      ; 2.269      ;
+; -1.343 ; lpc_decode:comb_3|port_80[7] ; qspi_slave:comb_4|qspi_out[3] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 1.000        ; 0.257      ; 2.267      ;
++--------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'lpc_clk_l'                                                                                                                                                               ;
++--------+------------------------------------------+------------------------------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                  ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+------------------------------------------+---------------------------+-------------+--------------+------------+------------+
+; -1.853 ; lpc_decode:comb_3|lpc_hit                ; lpc_decode:comb_3|lpc_hit                ; lpc_decode:comb_3|lpc_hit ; lpc_clk_l   ; 0.000        ; 3.699      ; 2.443      ;
+; -1.353 ; lpc_decode:comb_3|lpc_hit                ; lpc_decode:comb_3|lpc_hit                ; lpc_decode:comb_3|lpc_hit ; lpc_clk_l   ; -0.500       ; 3.699      ; 2.443      ;
+; 1.639  ; lpc_decode:comb_3|lad_out[0]             ; lpc_decode:comb_3|lad_out[0]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 1.860      ;
+; 1.646  ; lpc_decode:comb_3|start_reg[3]           ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 1.867      ;
+; 1.661  ; lpc_decode:comb_3|state_lpc.iow_pre_tar0 ; lpc_decode:comb_3|lpc_hit                ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 1.882      ;
+; 1.908  ; lpc_decode:comb_3|state_lpc.iow_pre_tar1 ; lpc_decode:comb_3|state_lpc.iow_sync0    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.129      ;
+; 1.924  ; lpc_decode:comb_3|state_lpc.addr5        ; lpc_decode:comb_3|state_lpc.addr4        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.145      ;
+; 1.934  ; lpc_decode:comb_3|state_lpc.addr6        ; lpc_decode:comb_3|state_lpc.addr5        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.155      ;
+; 1.942  ; lpc_decode:comb_3|state_lpc.post_tar0    ; lpc_decode:comb_3|state_lpc.post_tar1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.163      ;
+; 2.135  ; lpc_decode:comb_3|state_lpc.iow_pre_tar0 ; lpc_decode:comb_3|state_lpc.iow_pre_tar1 ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.356      ;
+; 2.166  ; lpc_decode:comb_3|start_reg[2]           ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.387      ;
+; 2.232  ; lpc_decode:comb_3|state_lpc.addr4        ; lpc_decode:comb_3|state_lpc.iow_data0    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.453      ;
+; 2.251  ; lpc_decode:comb_3|state_lpc.post_tar0    ; lpc_decode:comb_3|lad_out[0]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.472      ;
+; 2.277  ; lpc_decode:comb_3|state_lpc.addr6        ; lpc_decode:comb_3|address_reg[26]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.498      ;
+; 2.277  ; lpc_decode:comb_3|state_lpc.addr6        ; lpc_decode:comb_3|address_reg[25]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.498      ;
+; 2.277  ; lpc_decode:comb_3|state_lpc.addr6        ; lpc_decode:comb_3|address_reg[24]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.498      ;
+; 2.277  ; lpc_decode:comb_3|state_lpc.addr6        ; lpc_decode:comb_3|address_reg[27]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.498      ;
+; 2.468  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.689      ;
+; 2.565  ; lpc_decode:comb_3|state_lpc.post_tar1    ; lpc_decode:comb_3|lad_oe_reg             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.786      ;
+; 2.644  ; lpc_decode:comb_3|address_reg[27]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.865      ;
+; 2.665  ; lpc_decode:comb_3|state_lpc.addr5        ; lpc_decode:comb_3|address_reg[22]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.886      ;
+; 2.665  ; lpc_decode:comb_3|state_lpc.addr5        ; lpc_decode:comb_3|address_reg[21]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.886      ;
+; 2.665  ; lpc_decode:comb_3|state_lpc.addr5        ; lpc_decode:comb_3|address_reg[20]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.886      ;
+; 2.665  ; lpc_decode:comb_3|state_lpc.addr5        ; lpc_decode:comb_3|address_reg[23]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.886      ;
+; 2.693  ; lpc_decode:comb_3|start_reg[0]           ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.914      ;
+; 2.716  ; lpc_decode:comb_3|state_lpc.idle         ; lpc_decode:comb_3|state_lpc.abort        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.937      ;
+; 2.737  ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_decode:comb_3|state_lpc.addr6        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 2.958      ;
+; 2.854  ; lpc_decode:comb_3|start_reg[1]           ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.075      ;
+; 2.959  ; lpc_decode:comb_3|lad_oe_reg             ; lpc_decode:comb_3|lad_oe_reg             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.180      ;
+; 2.983  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|state_lpc.abort        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.204      ;
+; 3.002  ; lpc_decode:comb_3|state_lpc.abort        ; lpc_decode:comb_3|lad_oe_reg             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.223      ;
+; 3.029  ; lpc_decode:comb_3|state_lpc.iow_sync0    ; lpc_decode:comb_3|state_lpc.post_tar0    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.250      ;
+; 3.030  ; lpc_decode:comb_3|state_lpc.iow_sync0    ; lpc_decode:comb_3|lad_out[0]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.251      ;
+; 3.076  ; lpc_decode:comb_3|state_lpc.idle         ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.297      ;
+; 3.159  ; lpc_decode:comb_3|address_reg[24]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.380      ;
+; 3.212  ; lpc_decode:comb_3|state_lpc.iow_data0    ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.433      ;
+; 3.222  ; lpc_decode:comb_3|cmd_reg[0]             ; lpc_decode:comb_3|state_lpc.iow_data0    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.443      ;
+; 3.224  ; lpc_decode:comb_3|state_lpc.idle         ; lpc_decode:comb_3|start_reg[2]           ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.445      ;
+; 3.224  ; lpc_decode:comb_3|state_lpc.idle         ; lpc_decode:comb_3|start_reg[1]           ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.445      ;
+; 3.224  ; lpc_decode:comb_3|state_lpc.idle         ; lpc_decode:comb_3|start_reg[0]           ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.445      ;
+; 3.224  ; lpc_decode:comb_3|state_lpc.idle         ; lpc_decode:comb_3|start_reg[3]           ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.445      ;
+; 3.248  ; lpc_decode:comb_3|address_reg[23]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.469      ;
+; 3.251  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.472      ;
+; 3.264  ; lpc_decode:comb_3|state_lpc.addr4        ; lpc_decode:comb_3|address_reg[17]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.485      ;
+; 3.264  ; lpc_decode:comb_3|state_lpc.addr4        ; lpc_decode:comb_3|address_reg[18]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.485      ;
+; 3.264  ; lpc_decode:comb_3|state_lpc.addr4        ; lpc_decode:comb_3|address_reg[19]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.485      ;
+; 3.264  ; lpc_decode:comb_3|state_lpc.addr4        ; lpc_decode:comb_3|address_reg[16]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.485      ;
+; 3.328  ; lpc_decode:comb_3|state_lpc.iow_sync0    ; lpc_decode:comb_3|lad_oe_reg             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.549      ;
+; 3.361  ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_decode:comb_3|address_reg[30]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.582      ;
+; 3.361  ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_decode:comb_3|address_reg[29]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.582      ;
+; 3.361  ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_decode:comb_3|address_reg[28]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.582      ;
+; 3.361  ; lpc_decode:comb_3|state_lpc.addr7        ; lpc_decode:comb_3|address_reg[31]        ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.582      ;
+; 3.485  ; lpc_decode:comb_3|state_lpc.idle         ; lpc_decode:comb_3|state_lpc.command      ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.706      ;
+; 3.569  ; lpc_decode:comb_3|start_reg[3]           ; lpc_decode:comb_3|cmd_reg[2]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.790      ;
+; 3.569  ; lpc_decode:comb_3|start_reg[3]           ; lpc_decode:comb_3|cmd_reg[1]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.790      ;
+; 3.569  ; lpc_decode:comb_3|start_reg[3]           ; lpc_decode:comb_3|cmd_reg[0]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.790      ;
+; 3.662  ; lpc_decode:comb_3|state_lpc.idle         ; lpc_decode:comb_3|lad_oe_reg             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.883      ;
+; 3.697  ; lpc_decode:comb_3|address_reg[26]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.918      ;
+; 3.734  ; lpc_decode:comb_3|cmd_reg[1]             ; lpc_decode:comb_3|state_lpc.iow_data0    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.955      ;
+; 3.751  ; lpc_decode:comb_3|address_reg[20]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 3.972      ;
+; 3.857  ; lpc_decode:comb_3|address_reg[25]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.078      ;
+; 4.024  ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_decode:comb_3|state_lpc.iow_pre_tar0 ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.245      ;
+; 4.089  ; lpc_decode:comb_3|start_reg[2]           ; lpc_decode:comb_3|cmd_reg[2]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.310      ;
+; 4.089  ; lpc_decode:comb_3|start_reg[2]           ; lpc_decode:comb_3|cmd_reg[1]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.310      ;
+; 4.089  ; lpc_decode:comb_3|start_reg[2]           ; lpc_decode:comb_3|cmd_reg[0]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.310      ;
+; 4.105  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|start_reg[2]           ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.326      ;
+; 4.105  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|start_reg[1]           ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.326      ;
+; 4.105  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|start_reg[0]           ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.326      ;
+; 4.105  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|start_reg[3]           ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.326      ;
+; 4.161  ; lpc_decode:comb_3|address_reg[31]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.382      ;
+; 4.275  ; lpc_decode:comb_3|cmd_reg[2]             ; lpc_decode:comb_3|state_lpc.iow_data0    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.496      ;
+; 4.305  ; lpc_decode:comb_3|address_reg[22]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.526      ;
+; 4.366  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|state_lpc.command      ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.587      ;
+; 4.422  ; lpc_decode:comb_3|state_lpc.addr4        ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.643      ;
+; 4.453  ; lpc_decode:comb_3|address_reg[21]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.674      ;
+; 4.480  ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_decode:comb_3|lpc_hit                ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.701      ;
+; 4.489  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|cmd_reg[2]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.710      ;
+; 4.489  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|cmd_reg[1]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.710      ;
+; 4.489  ; lpc_decode:comb_3|state_lpc.command      ; lpc_decode:comb_3|cmd_reg[0]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.710      ;
+; 4.529  ; lpc_decode:comb_3|state_lpc.post_tar1    ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.750      ;
+; 4.578  ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_decode:comb_3|port_80[4]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.799      ;
+; 4.578  ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_decode:comb_3|port_80[5]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.799      ;
+; 4.578  ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_decode:comb_3|port_80[6]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.799      ;
+; 4.578  ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_decode:comb_3|port_80[7]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.799      ;
+; 4.616  ; lpc_decode:comb_3|start_reg[0]           ; lpc_decode:comb_3|cmd_reg[2]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.837      ;
+; 4.616  ; lpc_decode:comb_3|start_reg[0]           ; lpc_decode:comb_3|cmd_reg[1]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.837      ;
+; 4.616  ; lpc_decode:comb_3|start_reg[0]           ; lpc_decode:comb_3|cmd_reg[0]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.837      ;
+; 4.624  ; lpc_decode:comb_3|state_lpc.iow_data0    ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.845      ;
+; 4.643  ; lpc_decode:comb_3|cmd_reg[0]             ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.864      ;
+; 4.661  ; lpc_decode:comb_3|address_reg[30]        ; lpc_decode:comb_3|state_lpc.iow_data1    ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.882      ;
+; 4.777  ; lpc_decode:comb_3|start_reg[1]           ; lpc_decode:comb_3|cmd_reg[2]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.998      ;
+; 4.777  ; lpc_decode:comb_3|start_reg[1]           ; lpc_decode:comb_3|cmd_reg[1]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.998      ;
+; 4.777  ; lpc_decode:comb_3|start_reg[1]           ; lpc_decode:comb_3|cmd_reg[0]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 4.998      ;
+; 4.830  ; lpc_decode:comb_3|state_lpc.abort        ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 5.051      ;
+; 4.871  ; lpc_decode:comb_3|start_reg[3]           ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 5.092      ;
+; 4.876  ; lpc_decode:comb_3|address_reg[27]        ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 5.097      ;
+; 4.933  ; lpc_decode:comb_3|address_reg[31]        ; lpc_decode:comb_3|state_lpc.idle         ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 5.154      ;
+; 4.989  ; lpc_decode:comb_3|address_reg[18]        ; lpc_decode:comb_3|port_80[4]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 5.210      ;
+; 4.989  ; lpc_decode:comb_3|address_reg[18]        ; lpc_decode:comb_3|port_80[5]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 5.210      ;
+; 4.989  ; lpc_decode:comb_3|address_reg[18]        ; lpc_decode:comb_3|port_80[6]             ; lpc_clk_l                 ; lpc_clk_l   ; 0.000        ; 0.000      ; 5.210      ;
++--------+------------------------------------------+------------------------------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'lpc_decode:comb_3|lpc_hit'                                                                                                                        ;
++-------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+; Slack ; From Node                    ; To Node                       ; Launch Clock ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+; 1.789 ; lpc_decode:comb_3|port_80[7] ; qspi_slave:comb_4|qspi_out[3] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 0.000        ; 0.257      ; 2.267      ;
+; 1.791 ; lpc_decode:comb_3|port_80[4] ; qspi_slave:comb_4|qspi_out[0] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 0.000        ; 0.257      ; 2.269      ;
+; 1.808 ; lpc_decode:comb_3|port_80[5] ; qspi_slave:comb_4|qspi_out[1] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 0.000        ; 0.257      ; 2.286      ;
+; 1.819 ; lpc_decode:comb_3|port_80[6] ; qspi_slave:comb_4|qspi_out[2] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 0.000        ; 0.257      ; 2.297      ;
++-------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'lpc_decode:comb_3|lpc_hit'                                                                                                                     ;
++--------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                       ; Launch Clock ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+; -1.794 ; lpc_decode:comb_3|port_80[0] ; qspi_slave:comb_4|qspi_out[0] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 1.000        ; 0.257      ; 2.718      ;
+; -1.791 ; lpc_decode:comb_3|port_80[3] ; qspi_slave:comb_4|qspi_out[3] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 1.000        ; 0.257      ; 2.715      ;
+; -1.789 ; lpc_decode:comb_3|port_80[2] ; qspi_slave:comb_4|qspi_out[2] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 1.000        ; 0.257      ; 2.713      ;
+; -1.784 ; lpc_decode:comb_3|port_80[1] ; qspi_slave:comb_4|qspi_out[1] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 1.000        ; 0.257      ; 2.708      ;
++--------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'lpc_decode:comb_3|lpc_hit'                                                                                                                     ;
++-------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+; Slack ; From Node                    ; To Node                       ; Launch Clock ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+; 2.230 ; lpc_decode:comb_3|port_80[1] ; qspi_slave:comb_4|qspi_out[1] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 0.000        ; 0.257      ; 2.708      ;
+; 2.235 ; lpc_decode:comb_3|port_80[2] ; qspi_slave:comb_4|qspi_out[2] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 0.000        ; 0.257      ; 2.713      ;
+; 2.237 ; lpc_decode:comb_3|port_80[3] ; qspi_slave:comb_4|qspi_out[3] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 0.000        ; 0.257      ; 2.715      ;
+; 2.240 ; lpc_decode:comb_3|port_80[0] ; qspi_slave:comb_4|qspi_out[0] ; lpc_clk_l    ; lpc_decode:comb_3|lpc_hit ; 0.000        ; 0.257      ; 2.718      ;
++-------+------------------------------+-------------------------------+--------------+---------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                   ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; lpc_clk_l                 ; lpc_clk_l                 ; 202      ; 0        ; 0        ; 0        ;
+; lpc_decode:comb_3|lpc_hit ; lpc_clk_l                 ; 1        ; 1        ; 0        ; 0        ;
+; lpc_clk_l                 ; lpc_decode:comb_3|lpc_hit ; 4        ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                    ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; lpc_clk_l                 ; lpc_clk_l                 ; 202      ; 0        ; 0        ; 0        ;
+; lpc_decode:comb_3|lpc_hit ; lpc_clk_l                 ; 1        ; 1        ; 0        ; 0        ;
+; lpc_clk_l                 ; lpc_decode:comb_3|lpc_hit ; 4        ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                 ;
++------------+---------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+---------------------------+----------+----------+----------+----------+
+; lpc_clk_l  ; lpc_decode:comb_3|lpc_hit ; 4        ; 0        ; 0        ; 0        ;
++------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++------------------------------------------------------------------------------------+
+; Removal Transfers                                                                  ;
++------------+---------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+---------------------------+----------+----------+----------+----------+
+; lpc_clk_l  ; lpc_decode:comb_3|lpc_hit ; 4        ; 0        ; 0        ; 0        ;
++------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 117   ; 117  ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 17    ; 17   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------+
+; Clock Status Summary                                                       ;
++---------------------------+---------------------------+------+-------------+
+; Target                    ; Clock                     ; Type ; Status      ;
++---------------------------+---------------------------+------+-------------+
+; lpc_clk_l                 ; lpc_clk_l                 ; Base ; Constrained ;
+; lpc_decode:comb_3|lpc_hit ; lpc_decode:comb_3|lpc_hit ; Base ; Constrained ;
++---------------------------+---------------------------+------+-------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; lpc_frame_l ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_rst_l   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_clk    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; lpc_lad[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_int    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_out[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_out[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_out[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_out[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; lpc_frame_l ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_rst_l   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_clk    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; lpc_lad[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lpc_lad[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_int    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_out[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_out[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_out[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; qspi_out[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Oct 26 04:04:33 2021
+Info: Command: quartus_sta lpcdbg_qspi_p83-80_intel-sr6a4 -c lpcdbg_qspi_p83-80_intel-sr6a4
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lpcdbg_qspi_p83-80_intel-sr6a4.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name lpc_decode:comb_3|lpc_hit lpc_decode:comb_3|lpc_hit
+    Info (332105): create_clock -period 1.000 -name lpc_clk_l lpc_clk_l
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.199
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.199            -161.639 lpc_clk_l 
+    Info (332119):    -1.373              -5.423 lpc_decode:comb_3|lpc_hit 
+Info (332146): Worst-case hold slack is -1.853
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.853              -1.853 lpc_clk_l 
+    Info (332119):     1.789               0.000 lpc_decode:comb_3|lpc_hit 
+Info (332146): Worst-case recovery slack is -1.794
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.794              -7.158 lpc_decode:comb_3|lpc_hit 
+Info (332146): Worst-case removal slack is 2.230
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     2.230               0.000 lpc_decode:comb_3|lpc_hit 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 lpc_clk_l 
+    Info (332119):     0.234               0.000 lpc_decode:comb_3|lpc_hit 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 571 megabytes
+    Info: Processing ended: Tue Oct 26 04:04:34 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

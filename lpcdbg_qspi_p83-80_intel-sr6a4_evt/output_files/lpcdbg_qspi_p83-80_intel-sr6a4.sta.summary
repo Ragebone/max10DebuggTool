@@ -1,0 +1,37 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'lpc_clk_l'
+Slack : -6.199
+TNS   : -161.639
+
+Type  : Setup 'lpc_decode:comb_3|lpc_hit'
+Slack : -1.373
+TNS   : -5.423
+
+Type  : Hold 'lpc_clk_l'
+Slack : -1.853
+TNS   : -1.853
+
+Type  : Hold 'lpc_decode:comb_3|lpc_hit'
+Slack : 1.789
+TNS   : 0.000
+
+Type  : Recovery 'lpc_decode:comb_3|lpc_hit'
+Slack : -1.794
+TNS   : -7.158
+
+Type  : Removal 'lpc_decode:comb_3|lpc_hit'
+Slack : 2.230
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'lpc_clk_l'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'lpc_decode:comb_3|lpc_hit'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

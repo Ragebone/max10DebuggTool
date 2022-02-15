@@ -1,0 +1,11 @@
+Fitter Status : Successful - Tue Oct 26 04:04:31 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : lpcdbg_qspi_p83-80_intel-sr6a4
+Top-level Entity Name : top_level
+Family : MAX II
+Device : EPM1270F256C5
+Timing Models : Final
+Total logic elements : 62 / 1,270 ( 5 % )
+Total pins : 14 / 212 ( 7 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
